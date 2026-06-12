@@ -1,0 +1,83 @@
+# Week 4 Progress Log — Week of June 9, 2026
+
+**Focus:** Network+ exam prep while traveling | KQL training | Industry networking | SOC tooling research
+
+---
+
+## Network+ Study & Flashcards
+
+Continued active Network+ N10-009 exam prep throughout the week. Primary methods: Professor Messer video review, Anki flashcard drilling, and Jason Dion practice questions.
+
+Configured Anki desktop on MacBook Pro with AnkiWeb sync for offline study during travel. Current deck covers OSI layers, TCP/UDP, DNS/DHCP, ports/protocols, subnetting, routing, VLANs, and wireless standards.
+
+**Identified weak areas being actively targeted:**
+- Private IP ranges (especially 172.16.0.0–172.31.255.255)
+- Wireless standards (802.11 variants)
+- Subnetting under time pressure
+- Triage methodology
+
+Practice exam scores in progress. Target: 75%+ before sitting the exam.
+
+---
+
+## KQL Training — KC7 Cyber
+
+Started KQL (Kusto Query Language) training via KC7's modules. KQL is the query language for Microsoft Sentinel and Defender XDR — directly applicable to enterprise SOC environments.
+
+Completed foundational queries including table filtering, `where` clauses, and column projection. Encountered repeated network errors on the platform mid-session — diagnosed as KC7 platform instability, not syntax errors. Queries confirmed correct; errors resolved on retry.
+
+**Why this matters:** Sentinel is the dominant cloud SIEM in enterprise and MSSP environments. KQL proficiency is a differentiator for Tier 1 candidates.
+
+---
+
+## Microsoft Sentinel & Defender XDR Research
+
+Conducted focused research on Microsoft's cloud security stack ahead of an industry networking call.
+
+**Microsoft Sentinel**
+- Cloud-native SIEM/SOAR built on Azure Log Analytics
+- Query language: KQL
+- Ingests logs from endpoints, identity, email, cloud, and network sources
+- Detection rules, analytics, and automated playbooks all on the same platform
+- Used heavily in MSSP environments for multi-tenant monitoring
+
+**Microsoft Defender XDR**
+- Extended Detection and Response correlating signals across:
+  - Defender for Endpoint (EDR)
+  - Defender for Identity (AD/LDAP monitoring)
+  - Defender for Office 365 (email/phishing)
+  - Defender for Cloud Apps (SaaS visibility)
+- Unified incident view correlates related alerts across all pillars into one investigation queue
+- Tier 1 analysts triage unified incidents rather than individual raw alerts
+
+**Takeaway:** Sentinel + Defender XDR is a full SOC stack. Understanding how they layer together — detection in Defender, investigation and response in Sentinel — is essential context for any MSSP-facing role.
+
+---
+
+## Industry Networking
+
+Had an exploratory call with a SOC Manager at a local MSSP, arranged through a referral contact. MSSP analysts monitor environments for multiple clients simultaneously — real Tier 1 SOC work at scale.
+
+Prepared with research on Sentinel, Defender XDR, and the SOC/DFIR overlap common in MSSP environments. Came with specific questions rather than general ones.
+
+**Takeaway:** SOC and DFIR work overlap significantly at Tier 2 in MSSP environments. Direct conversations with active SOC managers provide signal that no study plan replicates.
+
+---
+
+## TryHackMe
+
+Continued progress on the **Cyber Security 101** and **SOC Level 1** pathways.
+
+Profile: [JacobVranyesFast](https://tryhackme.com/p/JacobVranyesFast)
+
+---
+
+## Status
+
+| Item | Status |
+|------|--------|
+| Network+ exam | Scheduled — ~2 weeks out |
+| Practice exam target | 75%+ (in progress) |
+| KQL / KC7 | Started — continuing |
+| Sentinel/XDR familiarity | Research complete, lab TBD |
+| Industry follow-up | In progress |
