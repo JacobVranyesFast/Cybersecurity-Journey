@@ -25,10 +25,9 @@ All VMs connected on an isolated internal NAT network (CyberLab).
 | Week 1 | Home Lab Setup | [View](week1-home-lab-setup.md) |
 
 ## Tools & Skills
-- VirtualBox, Splunk, Wireshark, nmap
+- VirtualBox, Wireshark, nmap
 - Linux (Ubuntu), Windows Server, Kali Linux
 - TryHackMe: [JacobVranyesFast](https://tryhackme.com/p/JacobVranyesFast)
-- Python scripting for SOC automation
 
 ## Study Plan
 Following a structured 22-week SOC Analyst career plan:
