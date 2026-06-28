@@ -6,7 +6,7 @@ to hired. This repository contains home lab write-ups,
 study notes, and security tool documentation.
 
 ## Certifications In Progress
-- [ ] CompTIA Network+ N10-009 — Target: Week 5
+- [*] CompTIA Network+ N10-009 — Target: Week 5
 - [ ] CompTIA Security+ SY0-701 — Target: Week 13
 - [ ] BTL1 (Blue Team Level 1) — Target: Week 14
 - [ ] Splunk Core Certified User — Target: Week 16
