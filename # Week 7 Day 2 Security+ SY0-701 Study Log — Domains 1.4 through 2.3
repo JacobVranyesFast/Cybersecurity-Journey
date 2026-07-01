@@ -1,0 +1,204 @@
+# Security+ SY0-701 Study Log — Domains 1.4 through 2.3
+**Date:** June 30, 2026
+
+## What I Did
+- Watched Professor Messer SY0-701 videos covering sections 1.4 through 2.3
+- Quizzed with AI tutor on all content after each video section
+- Topics covered: cryptography, PKI, certificates, threat actors, threat vectors,
+  social engineering, and vulnerability types
+
+## Topics Covered
+
+### 1.4 Cryptographic Solutions
+
+**Symmetric vs Asymmetric Encryption**
+- Symmetric — same key encrypts and decrypts, fast, key distribution problem at scale
+- Asymmetric — public key encrypts, private key decrypts, solves distribution problem
+- In practice both are used together — asymmetric to exchange a key, symmetric for data
+
+**Session Keys**
+- Temporary symmetric key generated for one session then discarded
+- Perfect Forward Secrecy — past sessions protected even if key is later compromised
+
+**Key Exchange**
+- Out-of-band — physically transfer key, not practical for real-time internet
+- In-band — use asymmetric encryption to transfer a symmetric key securely
+- Key exchange algorithms (e.g. Diffie-Hellman) — derive same symmetric key on both
+  sides without ever sending it across the network
+
+**Hashing**
+- One-way fingerprint of data, cannot be reversed
+- SHA-256 — current standard, 256-bit output, 64 hex characters
+- MD5 — collision vulnerability found 1996, deprecated
+- SHA-1 — also deprecated, collision issues
+- Salt — random data added to password before hashing, defeats rainbow tables
+- Key stretching — hash the hash multiple times to slow brute force
+
+**Digital Signatures**
+- Hash encrypted with sender's private key
+- Proves integrity (data unchanged) and origin (came from sender)
+- Provides nonrepudiation — sender cannot deny sending it
+- Verify with sender's public key
+
+**PKI and Certificates**
+- X.509 format — standard digital certificate format
+- Certificate Authority (CA) — signs certificates to establish trust
+- CSR (Certificate Signing Request) — sent to CA to get a certificate signed
+- Root of trust — chain of trust starting from a trusted root CA
+- Wildcard certificate — covers all subdomains under a domain (*.domain.com)
+- CRL (Certificate Revocation List) — list of revoked certs maintained by CA
+- OCSP — Online Certificate Status Protocol, checks single cert status in real time
+- OCSP Stapling — server embeds OCSP response in TLS handshake, most efficient
+- Web of trust — alternative to CA, individuals sign each other's certificates
+
+**Encryption Technologies**
+- TPM (Trusted Platform Module) — cryptographic chip on single device, used for
+  BitLocker, key generation, password protected
+- HSM (Hardware Security Module) — enterprise-scale key management for hundreds
+  of servers, clustered for redundancy
+- Secure enclave — separate security processor on mobile devices, handles
+  encryption, has own boot ROM and true random number generator
+- Key management system — centralized management of all keys, auto rotation, logging
+
+**Obfuscation**
+- Steganography — hide data inside media (images, audio, video, network traffic)
+  security through obscurity, weak on its own
+- Covertext — the file containing the hidden data
+- Tokenization — replace sensitive data with non-mathematical token, one-time use,
+  no encryption needed in transit (credit card payments)
+- Data masking — hide portions of data (asterisks on receipts showing last 4 digits)
+
+**Blockchain**
+- Distributed ledger — everyone maintains a copy
+- Transactions bundled into blocks, hashed for integrity
+- If block is modified hash becomes invalid, network rejects it
+- Use cases: cryptocurrency, digital identity, supply chain tracking, voting
+
+### 2.1 Threat Actors
+
+| Actor | Internal/External | Motivation | Resources | Sophistication |
+|---|---|---|---|---|
+| Nation state | External | Espionage, disruption, war | Extensive | Very high (APT) |
+| Hacktivist | External | Political, philosophical | Low-medium | Medium-high |
+| Unskilled attacker | External | Disruption, curiosity | Low | Low (script kiddie) |
+| Organized crime | External | Financial gain | High | Medium-high |
+| Insider threat | Internal | Revenge, financial gain | Existing access | Medium |
+| Shadow IT | Internal | Convenience | Limited | Low |
+
+- APT (Advanced Persistent Threat) — nation state level, constant, multi-target
+- Shadow IT — not malicious but bypasses IT controls, unknown security risk
+- Insider threat advantage — already knows where data is and how to avoid detection
+
+### 2.2 Threat Vectors and Attack Surfaces
+
+**Messaging-based vectors**
+- Email, SMS, instant messages — phishing, malicious links, malware attachments
+- Vishing — voice phishing over phone
+- Smishing — SMS phishing
+- Spear phishing — targeted, uses personal details
+- Whaling — spear phishing targeting executives
+
+**Social Engineering**
+- Pretexting — fabricated story to extract information
+- Impersonation — pretending to be IT help desk, executives, government
+- Typosquatting / URL hijacking — domain one typo from legitimate site
+- Watering hole attack — compromise third party site target visits, wait for them
+  Defense: defense in depth (AV + firewall + IPS layered)
+- Misinformation campaigns — fake accounts, amplification via social media algorithms
+- Brand impersonation — fake sites using real brand names, indexed by Google
+
+**Other Vectors**
+- USB drop attacks — malicious USB in parking lot, can emulate keyboard
+- Default credentials — unchanged factory passwords, Mirai botnet exploits these
+- Supply chain — compromise vendor/MSP/hardware (Target HVAC 2013,
+  SolarWinds Orion 2020, fake Cisco switches 2022)
+- Open ports — every enabled service is an attack surface
+- Unsupported/legacy systems — no patches available, high risk
+
+### 2.3 Types of Vulnerabilities
+
+**Memory Injection / DLL Injection**
+- Malware injects into existing legitimate process memory space
+- Inherits process permissions — instant privilege escalation
+- Evades signature AV — no standalone malicious process visible
+- SOC relevance: behavioral detection catches unusual DLLs in trusted processes
+
+**Buffer Overflow**
+- Write beyond memory variable boundary, overflow into adjacent variable
+- Can change permission values, execute arbitrary code
+- Bounds checking is the developer defense
+- Must be repeatable and reliable to be exploitable
+
+**Race Conditions / TOCTOU**
+- Race condition: simultaneous events app doesn't account for
+- TOCTOU — Time-Of-Check to Time-Of-Use: value changes in the gap between
+  check and use
+- Examples: bank transfer duplicate funds exploit, Mars rover reboot loop,
+  Tesla Model 3 Pwn2Own 2023
+
+**SQL Injection**
+- Inject SQL code into unsanitized input field
+- OR 1=1 returns all database records
+- Can read, modify, delete, crash database
+- Defense: input validation
+- SOC relevance: OR 1=1 in web logs = injection attempt
+
+**Cross-Site Scripting (XSS)**
+- Reflected — attacker sends link to victim, script runs once against trusted site
+- Stored/persistent — script posted on site, runs for every visitor
+- Commonly JavaScript based
+- Defense: input validation on all fields, keep browser updated
+- Real example: Subaru non-expiring token gave full vehicle control via XSS
+
+**Hardware Vulnerabilities**
+- Firmware — OS inside hardware devices, only manufacturer can patch
+- EOL — product no longer sold, patches still available temporarily
+- EOSL — no more patches at all, replace immediately
+- Legacy devices — mitigate with firewall rules and IPS signatures until replaced
+
+**Virtualization Vulnerabilities**
+- VM escape — break out of one VM, access others on same hypervisor
+- Resource reuse — hypervisor shares memory between VMs, data leakage risk
+- Real example: Pwn2Own 2017 Edge → Windows kernel → VMware chain
+
+**Mobile Device Vulnerabilities**
+- Jailbreaking (iOS) / Rooting (Android) — replaces OS, bypasses MDM
+- Sideloading — apps installed outside approved store
+- MDM bypass is the critical security impact
+
+**Zero-Day Vulnerabilities**
+- Unknown to vendor, no patch exists
+- Attacker exploits before anyone knows the vulnerability exists
+- Defense: defense in depth
+- Track at cve.mitre.org
+
+**Supply Chain Vulnerabilities**
+- Target 2013 — HVAC contractor → POS network → 40M cards stolen
+- SolarWinds 2020 — malicious code in signed Orion update, 18,000 customers
+  compromised including Pentagon, Microsoft, Cisco
+- Counterfeit Cisco switches 2022 — fake hardware on real networks
+
+**Cloud Vulnerabilities**
+- 76% of orgs no MFA on cloud console, 63% of cloud code unpatched
+- Common attacks: DoS, auth bypass, directory traversal, SQLi, XSS,
+  remote code execution
+- Log4j and Spring Cloud Function — easy to exploit, full system access
+
+**Misconfiguration Vulnerabilities**
+- Open cloud storage (14M Verizon records exposed 2017)
+- Unsecured admin accounts with weak passwords
+- Insecure protocols (Telnet, FTP, HTTP) sending data in cleartext
+- Default credentials — Mirai botnet scans for 60+ default IoT configs
+- Open ports — more services = more attack surface, audit firewall rules regularly
+
+## What I Learned Today
+- Asymmetric: encrypt with recipient's public key, decrypt with their private key
+- Perfect Forward Secreity — ephemeral session keys protect past sessions
+- OCSP Stapling is most efficient cert revocation method — embedded in TLS handshake
+- Shadow IT is a threat actor — not malicious but bypasses all security controls
+- OR 1=1 in logs is an immediate SQL injection red flag
+- Reflected XSS = one victim, stored XSS = everyone who visits
+- EOL vs EOSL — EOSL means no more patches, replace now
+- Supply chain attacks bypass perimeter by coming through trusted channels
+- Defense in depth is the answer to watering hole and zero-day attacks
+- Mirai botnet specifically targets default IoT credentials — change them always
