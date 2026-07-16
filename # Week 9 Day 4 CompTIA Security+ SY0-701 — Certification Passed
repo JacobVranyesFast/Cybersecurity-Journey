@@ -1,0 +1,74 @@
+# CompTIA Security+ SY0-701 — Certification Passed
+
+**Date:** July 16, 2026
+**Platform:** Professor Messer video course, custom Anki deck, AI-generated PBQ-style scenario drills, Jason Dion practice exams
+**Domain:** All five Security+ domains
+
+---
+
+## The Result
+
+Passed CompTIA Security+ SY0-701 today. Second cert down after Network+ (N10-009), and the one that maps directly to Tier 1 SOC analyst job postings.
+
+## How I Got Here
+
+**Video content:** Full Professor Messer SY0-701 course, all five domains, worked through in order alongside the exam objectives doc.
+
+**Flashcards:** Custom Anki deck — 362 notes / 384 cards across all five domains, built as I went through each video instead of after the fact. Daily spaced repetition, synced to phone via AnkiWeb so review happened outside dedicated study blocks too.
+
+**Practical PBQ-style labs:** Jason Dion's practice exams don't include PBQ-style questions, so I built custom scenario-based PBQ practice with AI instead — ordering incident response steps, picking the right control for a given risk, reading a log/topology and identifying the issue. This is where concept understanding got tested against actual decision-making instead of recall.
+
+**Jason Dion practice exams:** Standard multiple-choice practice exams, used separately for domain-level knowledge checks and terminology drilling.
+
+**Terminology precision was the main risk, and I worked it directly.** I kept getting the concept right and losing points on exact exam wording — Exposure Factor vs. Exposure Value, Rules of Engagement vs. SLA, due care vs. due diligence, session hijacking vs. side-jacking, SSL stripping step order, CSRF trust direction. Closed that gap by re-drilling those specific pairs in Anki until the terminology was as automatic as the underlying concept.
+
+---
+
+## What I Learned Today
+
+- Passing this exam isn't the finish line, it's the credential that gets a resume past the keyword filter for SOC analyst postings. Actual job-readiness comes from the lab work and the PBQ-style thinking, not the multiple-choice format.
+- Building my own PBQ scenarios was more valuable prep than straight video review, since CompTIA's practice material doesn't replicate that question type well. Recognizing a concept in a paragraph is different from applying it under a timer with a scenario in front of you — that gap is exactly what the real exam and a real SOC alert queue both test.
+- Terminology precision matters because attackers, vendors, and SIEM alert names all use the exact term, not the general idea. Mixing up "session hijacking" and "side-jacking" on paper is a flashcard problem; mixing them up in a ticket is a triage problem.
+
+## Next Steps
+
+- BTL1 (Blue Team Labs) — next in the cert path
+- Splunk Core after BTL1
+- Follow up with Argent Reach on the Tier 1 SOC role
+- Finish the DoD Cyber RAP apprenticeship application
+
+**Date:** July 16, 2026
+**Platform:** Professor Messer video course, custom Anki deck, AI-generated PBQ-style scenario drills, Jason Dion practice exams
+**Domain:** All five Security+ domains
+
+---
+
+## The Result
+
+Passed CompTIA Security+ SY0-701 today. Second cert down after Network+ (N10-009), and the one that maps directly to Tier 1 SOC analyst job postings.
+
+## How I Got Here
+
+**Video content:** Full Professor Messer SY0-701 course, all five domains, worked through in order alongside the exam objectives doc.
+
+**Flashcards:** Custom Anki deck — 362 notes / 384 cards across all five domains, built as I went through each video instead of after the fact. Daily spaced repetition, synced to phone via AnkiWeb so review happened outside dedicated study blocks too.
+
+**Practical PBQ-style labs:** Jason Dion's practice exams don't include PBQ-style questions, so I built custom scenario-based PBQ practice with AI instead — ordering incident response steps, picking the right control for a given risk, reading a log/topology and identifying the issue. This is where concept understanding got tested against actual decision-making instead of recall.
+
+**Jason Dion practice exams:** Standard multiple-choice practice exams, used separately for domain-level knowledge checks and terminology drilling.
+
+**Terminology precision was the main risk, and I worked it directly.** I kept getting the concept right and losing points on exact exam wording — Exposure Factor vs. Exposure Value, Rules of Engagement vs. SLA, due care vs. due diligence, session hijacking vs. side-jacking, SSL stripping step order, CSRF trust direction. Closed that gap by re-drilling those specific pairs in Anki until the terminology was as automatic as the underlying concept.
+
+---
+
+## What I Learned Today
+
+- Passing this exam isn't the finish line, it's the credential that gets a resume past the keyword filter for SOC analyst postings. Actual job-readiness comes from the lab work and the PBQ-style thinking, not the multiple-choice format.
+- Building my own PBQ scenarios was more valuable prep than straight video review, since CompTIA's practice material doesn't replicate that question type well. Recognizing a concept in a paragraph is different from applying it under a timer with a scenario in front of you — that gap is exactly what the real exam and a real SOC alert queue both test.
+- Terminology precision matters because attackers, vendors, and SIEM alert names all use the exact term, not the general idea. Mixing up "session hijacking" and "side-jacking" on paper is a flashcard problem; mixing them up in a ticket is a triage problem.
+
+## Next Steps
+
+- BTL1 (Blue Team Labs) — next in the cert path
+- Follow up with applying for Jobs, Tier 1 SOC role
+- Finish the DoD Cyber RAP apprenticeship application
