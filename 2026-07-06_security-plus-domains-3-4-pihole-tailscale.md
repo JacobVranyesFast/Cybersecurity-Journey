@@ -1,0 +1,44 @@
+# Security+ Domains 3-4 Study & Remote Pi-hole Access via Tailscale
+
+**Date:** July 6, 2026
+**Platform:** Professor Messer SY0-701 video course, Home Lab (Pi-hole, Tailscale)
+**Domain:** Security+ SY0-701 Domains 3.2-4.3 | Home Lab
+
+---
+
+## What I Did
+- Covered Security+ SY0-701 objectives 3.2-3.4 (Security Architecture) and 4.1-4.3 (Security Operations)
+- Added Tailscale to an already-running Pi-hole instance to enable remote DNS filtering on cellular/mobile devices outside the home network
+
+## Concepts Covered
+
+**3.2: Securing Enterprise Infrastructure**
+Firewall types (NGFW, WAF, UTM), IDS/IPS placement (inline vs tap), security zones, 802.1X/EAP port security, jump servers and proxies. Directly relevant to the segmentation work already in progress on the home network (VLAN planning, firewall ACLs between segments).
+
+**3.3: Resilience and Recovery**
+RPO/RTO, backup types (onsite/offsite, snapshots, replication), UPS/generator power considerations, hot/warm/cold site models. Applied this to the lab by evaluating backup strategy for VM snapshots and the UPS already in place.
+
+**3.4: Hardening Techniques**
+Secure baselines, hardening targets (routers, switches, servers, IoT), WPA3 wireless security, MDM concepts, sandboxing. Cross-referenced against actual hardening steps taken on lab VMs (disabling unused services, default credential changes).
+
+**4.1: Asset Management**
+Inventory, ownership/classification, decommissioning and sanitization. Used the home lab's own hardware list as a live example of asset tracking in practice.
+
+**4.2: Vulnerability Management**
+Identification methods (scanning, pentesting, threat feeds), CVSS scoring, CVE, remediation vs compensating controls. Ties directly into eventual vulnerability scanning work planned for the lab environment.
+
+**4.3: Security Monitoring and Alerting**
+Log aggregation, SIEM, SCAP, DLP, NetFlow. Directly connected to the Pi-hole/Tailscale work below, this is remote log visibility and access control in miniature.
+
+## Remote Pi-hole Access via Tailscale
+- Pi-hole has been running as network-wide DNS filtering for a while; today's work was extending that protection to devices off the home network
+- Installed Tailscale on the Pi-hole host to join it to a private WireGuard-based mesh (tailnet)
+- Configured phone (cellular) to connect to the tailnet and use the Pi-hole Pi as its DNS resolver, so ad/tracker/malicious-domain filtering applies even on mobile data, not just on home wifi
+- This is a practical instance of secure remote access (3.2 territory) applied to an existing security control, rather than opening a port or exposing Pi-hole directly to the internet: no inbound firewall rule needed since Tailscale handles NAT traversal over an encrypted tunnel
+
+---
+
+## What I Learned Today
+Tailscale made it obvious why "VPN" as an exam term (3.2, remote access/tunneling) undersells what's actually happening here. This isn't a traditional client-to-site VPN into one network, it's a mesh where each device just needs to trust the tailnet, not a specific gateway. That distinction stopped being abstract once I had my phone actually resolving DNS through my own Pi-hole over cellular. It's a small change, but it's the difference between a lab-only control and a control that actually protects a device wherever it goes, which is the real point of DNS filtering in the first place.
+
+**Big Picture:** Extending an existing security control (Pi-hole) to remote devices with Tailscale, instead of exposing it directly to the internet, is the same secure-remote-access reasoning tested in 3.2, just applied to my own lab instead of an exam scenario.
