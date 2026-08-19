@@ -51,6 +51,11 @@ Side project in progress: a 20+ node Raspberry Pi cluster, physical hardware ful
 | June 30, 2026 | Security+ Study Log: Cryptography, Threat Actors & Vulnerability Types | [View](2026-06-30_security-plus-cryptography-threat-actors-vulnerabilities.md) |
 | July 6, 2026 | Security+ Domains 3-4 Study & Remote Pi-hole Access via Tailscale | [View](2026-07-06_security-plus-domains-3-4-pihole-tailscale.md) |
 | July 16, 2026 | CompTIA Security+ SY0-701: Certification Passed | [View](2026-07-16_security-plus-sy0-701-certification-passed.md) |
+| Week of July 20, 2026 | LetsDefend: Phishing & Web Attack Alert Queue | [View](2026-07-20_letsdefend-phishing-web-attacks-week.md) |
+| Week of July 27, 2026 | LetsDefend: Malware Alert Investigations | [View](2026-07-27_letsdefend-malware-week.md) |
+| Week of August 3, 2026 | LetsDefend: SOC Analyst Learning Path, Training Focus Week | [View](2026-08-03_letsdefend-soc-analyst-path-training.md) |
+| Week of August 10, 2026 | LetsDefend: Ransomware & Emotet Investigations | [View](2026-08-10_letsdefend-ransomware-emotet-week.md) |
+| Week of August 17, 2026 | LetsDefend: Threat Intel & Malware Alerts (in progress) | [View](2026-08-17_letsdefend-threat-intel-malware-week.md) |
 | August 19, 2026 | KC7 KQL 201: Aggregation, Time Filtering & Multi-Field Summarization | [View](2026-08-19_kc7-kql-201-aggregation-time-filtering.md) |
 
 See [TEMPLATE.md](TEMPLATE.md) for the format every write-up above follows.
