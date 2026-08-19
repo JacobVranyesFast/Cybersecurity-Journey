@@ -7,9 +7,9 @@ study notes, and security tool documentation.
 
 ## Certifications In Progress
 - [*] CompTIA Network+ N10-009 — Target: Week 5
-- [ ] CompTIA Security+ SY0-701 — Target: Week 13
-- [ ] BTL1 (Blue Team Level 1) — Target: Week 14
-- [ ] Splunk Core Certified User — Target: Week 16
+- [*] CompTIA Security+ SY0-701 — Target: Week 13
+- [*] Let's Defend SOC Analyst Path 
+- [ ] Microsoft SC-200 
 
 ## Home Lab
 3-VM cybersecurity lab running on VirtualBox:
