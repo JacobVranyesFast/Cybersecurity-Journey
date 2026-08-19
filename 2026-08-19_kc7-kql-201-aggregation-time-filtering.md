@@ -1,4 +1,4 @@
-# KC7 KQL 201 — Aggregation, Time Filtering, and Multi-Field Summarization
+# KC7 KQL 201: Aggregation, Time Filtering & Multi-Field Summarization
 
 **Date:** August 19, 2026
 **Platform:** KC7
@@ -7,11 +7,9 @@
 ---
 
 ## Module Overview
-
 Completed KQL 201, the follow-on to KQL 101. Shifted from single-column filters into multi-field aggregation, time-bucketed analysis, and conditional logic across Email, ProcessEvents, and AuthenticationEvents tables.
 
 ## Techniques Covered
-
 - **Time filtering:** `datetime()`, `between`, `ago()` to scope queries to a window. `bin()` to bucket timestamps for spotting activity spikes.
 - **Aggregation:** `summarize` with `count()`, `dcount()`, `min()`, `max()`, `make_set()`.
 - **Data shaping:** `project` to trim columns, `extend` to add calculated fields (used with `split()` to pull domain out of an email address).
@@ -39,7 +37,7 @@ AuthenticationEvents
 | summarize ip_list = make_set(src_ip), unique_ips = dcount(src_ip) by username
 | where unique_ips > 5
 ```
-No textbook password spray in this dataset — that pattern needs one IP hitting multiple usernames with repeated failures, which wasn't present here. Still the standing query I'd run first on any auth log to flag accounts logging in from an unusual number of source IPs.
+No textbook password spray in this dataset: that pattern needs one IP hitting multiple usernames with repeated failures, which wasn't present here. Still the standing query I'd run first on any auth log to flag accounts logging in from an unusual number of source IPs.
 
 Domain extraction with exclusion filtering:
 ```kusto
@@ -50,7 +48,6 @@ Email
 ```
 
 ## Syntax Gotchas
-
 - `count` and `dcount` are functions, not keywords. They need parens.
 - `by` in `summarize` takes a plain column list, no wrapping parens.
 - Every operator starts a new pipe. Commas only separate items inside one operator's clause, they don't chain to the next operator.
@@ -59,5 +56,6 @@ Email
 ---
 
 ## What I Learned Today
+KQL 201 was less about a specific case and more about writing `summarize` queries I can trust. Aliasing every aggregation up front and treating each pipe as a hard operator boundary cleared up most of the syntax errors I was hitting. The auth log pattern, distinct source IP count per user filtered above a threshold, is now a standing query I'll reach for on any authentication table, spray attack or not.
 
-KQL 201 was less about a specific case and more about writing `summarize` queries I can trust. Aliasing every aggregation up front and treating each pipe as a hard operator boundary cleared up most of the syntax errors I was hitting. The auth log pattern — distinct source IP count per user, filtered above a threshold — is now a standing query I'll reach for on any authentication table, spray attack or not.
+**Big Picture:** Aggregation and time-bucketing are what turn a KQL query from "find one bad thing" into "find the pattern across a whole population," which is most of what threat hunting actually is.

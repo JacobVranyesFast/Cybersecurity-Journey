@@ -1,0 +1,55 @@
+# Security+ Study Hard Start & MSSP Interviews
+
+**Date:** June 29, 2026
+**Platform:** Professor Messer SY0-701 video course
+**Domain:** Security+ SY0-701 Domain 1 | Job Search
+
+---
+
+## What I Did
+- Started full Security+ SY0-701 study using the Professor Messer video course
+- Completed Domain 1 content: 1.1 Security Controls, 1.2 Security Concepts, 1.3 Change Management
+- Attended three in-person interviews at a local startup (MSSP) for a Tier 1 SOC Analyst position
+- Ran a quiz session on change management concepts mapped to Security+ objective 1.3
+
+## Topics Covered
+
+**1.1: Security Controls**
+- Categories: technical, managerial, operational, physical
+- Control types: preventive, deterrent, detective, corrective, compensating, directive
+
+**1.2: Security Concepts**
+- CIA Triad: confidentiality, integrity, availability
+- Non-repudiation via hashing and digital signatures
+- AAA: authentication, authorization, accounting
+- Gap analysis for identifying security posture weaknesses
+- Zero trust architecture: control plane vs data plane, policy engine/administrator/enforcement point
+- Physical security controls: bollards, access control vestibules, sensors, surveillance
+- Deception tech: honeypots, honeynets, honeyfiles, honeytokens
+
+**1.3: Change Management**
+- Formal change control process: scope, scheduling, impact analysis, risk assessment, approval
+- Owner role: initiates request, verifies after change, does not perform the change
+- Stakeholders: anyone impacted by the change, not always obvious
+- Sandbox testing: mirror of production used to test changes and validate backout procedures
+- Backout plan: documented steps to revert a change, requires a full backup beforehand
+- Technical implications: allow lists vs deny lists, maintenance windows, change freezes, legacy app dependencies
+- Version control: tracks what changed between configurations, enables rollback
+- Documentation: diagrams and policies must be updated after every change
+
+## Quiz Results
+7/7 on change management concepts. Weak areas to reinforce:
+- Backout plan vs backup (related but distinct)
+- Owner's responsibility for post-change verification
+- Maintenance window vs change freeze terminology
+
+---
+
+## What I Learned Today
+The CIA triad is the foundation everything else in security is built on. Confidentiality, integrity, and availability aren't just definitions, they're the lens you use to evaluate any security decision. A SOC analyst is essentially monitoring for violations of one or more of those three things on every shift.
+
+Non-repudiation clicked today. Hashing proves data hasn't been tampered with (integrity), and a digital signature ties that hash to a specific sender, so they can't later deny sending it. Together those two things are how you prove something happened and who did it, which matters a lot in incident response and forensics.
+
+The connection between hashing and integrity is direct: if the hash of a file changes, the file changed. That's a detection primitive. Understanding that makes file integrity monitoring make sense as a tool, not just a checkbox.
+
+**Big Picture:** Interviewing for a Tier 1 SOC role and studying the CIA triad on the same day was a good reminder that the interviews are asking about exactly this: how to reason about confidentiality, integrity, and availability under pressure.
