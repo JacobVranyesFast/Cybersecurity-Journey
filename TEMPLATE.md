@@ -1,4 +1,4 @@
-# [Clear, specific title — the subject of the session, not "Week X Day Y"]
+# [Clear, specific title: the subject of the session, not "Week X Day Y"]
 
 **Date:** Month DD, YYYY
 **Platform:** [LetsDefend / KC7 / TryHackMe / Home Lab / etc.]
@@ -9,19 +9,19 @@
 ## What I Did
 - Factual bullet-log of the session, no padding
 
-## [Flexible — swap in whatever fits: Investigation Steps / Techniques / Query Patterns / Commands Used / Findings]
+## [Flexible: swap in whatever fits, Investigation Steps / Techniques / Query Patterns / Commands Used / Findings]
 - ...
 
 ## MITRE ATT&CK Mapping
 <!-- only include this section when the entry actually involves TTPs -->
-- Txxxx — Technique name
+- Txxxx: Technique name
 
 ---
 
 ## What I Learned Today
 - ...
 
-**Big Picture:** [one line, ties the session to Tier 1 SOC work — no filler]
+**Big Picture:** [one line, ties the session to Tier 1 SOC work, no filler]
 
 <!--
 Notes on using this template:
