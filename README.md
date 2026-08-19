@@ -1,23 +1,26 @@
-# Jacob Vranyes-Fast — Cybersecurity Journey
+# Jacob Vranyes-Fast's Cybersecurity Journey
 
 ## About
 Aspiring Tier 1 SOC Analyst documenting my journey from zero 
 to hired. This repository contains home lab write-ups, 
 study notes, and security tool documentation.
 
-## Certifications In Progress
-- [*] CompTIA Network+ N10-009 — Target: Week 5
-- [*] CompTIA Security+ SY0-701 — Target: Week 13
-- [*] Let's Defend SOC Analyst Path 
-- [ ] Microsoft SC-200 
+## Certifications & Training
+- [x] CompTIA Network+ N10-009: passed June 2026
+- [x] CompTIA Security+ SY0-701: passed July 2026
+- [x] [Let's Defend](https://app.letsdefend.io/user/JacobVranyesFast) SOC Analyst Path: completed, continuing with alert investigations and challenges on the platform
+- [ ] Microsoft SC-200: in progress
 
 ## Home Lab
-3-VM cybersecurity lab running on VirtualBox:
-- Ubuntu 22.04 LTS — Linux practice, Splunk SIEM
-- Windows Server 2022 — Active Directory, Event log analysis
-- Kali Linux — Network scanning, recon, attack simulation
+Started as a 3-VM VirtualBox setup, since rebuilt on Proxmox as the main hypervisor. Currently running:
+- Kali Linux: recon, scanning, attack simulation
+- Ubuntu Server running the Wazuh SIEM stack (manager, indexer, dashboard, Filebeat)
+- Windows Server 2022: Active Directory, event log analysis
+- FlareVM: Windows-side malware analysis tooling
+- REMnux: Linux-side malware analysis tooling
+- Pi-hole: network-wide DNS filtering, reachable remotely over Tailscale
 
-All VMs connected on an isolated internal NAT network (CyberLab).
+Side project in progress: a 20+ node Raspberry Pi cluster, physical hardware fully wired up, currently getting K3s (lightweight Kubernetes) installed and workloads running on it. Right now only two of the Pis are doing active work (Pi-hole and a Wake-on-LAN relay for the main workstation); the rest are staged for the cluster build-out.
 
 ## Write-Ups
 | Date | Topic | Link |
@@ -53,16 +56,17 @@ All VMs connected on an isolated internal NAT network (CyberLab).
 See [TEMPLATE.md](TEMPLATE.md) for the format every write-up above follows.
 
 ## Tools & Skills
-- VirtualBox, Wireshark, nmap
-- Linux (Ubuntu), Windows Server, Kali Linux
-- TryHackMe: [JacobVranyesFast](https://tryhackme.com/p/JacobVranyesFast)
+- Proxmox, VirtualBox, Wazuh SIEM, Wireshark, nmap
+- Linux (Ubuntu, Kali, REMnux), Windows Server, FlareVM
+- Tailscale, Pi-hole, Raspberry Pi / K3s
+- KQL (Microsoft Sentinel / Defender XDR query language)
+- Platforms: [Let's Defend](https://app.letsdefend.io/user/JacobVranyesFast), [KC7](https://kc7cyber.com/profile/422f062b), [TryHackMe](https://tryhackme.com/p/JacobVranyesFast)
 
-## Study Plan
-Following a structured 22-week SOC Analyst career plan:
-- Phase 1 (Weeks 1-2): Home lab setup and gap analysis
-- Phase 2 (Weeks 3-5): CompTIA Network+
-- Phase 3 (Weeks 6-13): CompTIA Security+
-- Phase 4 (Weeks 14-22): BTL1, Splunk Core, job applications
+## Current Focus
+No longer following a fixed week-by-week plan, this is a continuous learning phase at this point:
+- **Done:** CompTIA Network+ (N10-009), CompTIA Security+ (SY0-701), Let's Defend SOC Analyst Path
+- **In progress:** Microsoft SC-200, ongoing Let's Defend alert investigations, KC7 KQL / threat hunting practice, Raspberry Pi cluster build-out
+- **Next:** additional Microsoft security certifications
 
 ## Contact
 - GitHub: (https://github.com/JacobVranyesFast)
