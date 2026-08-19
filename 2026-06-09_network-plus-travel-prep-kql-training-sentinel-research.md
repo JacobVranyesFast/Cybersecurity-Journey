@@ -1,8 +1,12 @@
-# Week 4 Progress Log — Week of June 9, 2026
+# Network+ Travel Study, KQL Training & Microsoft Sentinel Research
 
-**Focus:** Network+ exam prep while traveling | KQL training | Industry networking | SOC tooling research
+**Date:** Week of June 9, 2026
+**Platform:** Anki, KC7, Professor Messer N10-009, TryHackMe
+**Domain:** Network+ N10-009 | SOC Tooling Research | Industry Networking
 
 ---
+
+**Focus:** Network+ exam prep while traveling, KQL training, industry networking, SOC tooling research
 
 ## Network+ Study & Flashcards
 
@@ -11,7 +15,7 @@ Continued active Network+ N10-009 exam prep throughout the week. Primary methods
 Configured Anki desktop on MacBook Pro with AnkiWeb sync for offline study during travel. Current deck covers OSI layers, TCP/UDP, DNS/DHCP, ports/protocols, subnetting, routing, VLANs, and wireless standards.
 
 **Identified weak areas being actively targeted:**
-- Private IP ranges (especially 172.16.0.0–172.31.255.255)
+- Private IP ranges (especially 172.16.0.0-172.31.255.255)
 - Wireless standards (802.11 variants)
 - Subnetting under time pressure
 - Triage methodology
@@ -20,11 +24,11 @@ Practice exam scores in progress. Target: 75%+ before sitting the exam.
 
 ---
 
-## KQL Training — KC7 Cyber
+## KQL Training: KC7 Cyber
 
-Started KQL (Kusto Query Language) training via KC7's modules. KQL is the query language for Microsoft Sentinel and Defender XDR — directly applicable to enterprise SOC environments.
+Started KQL (Kusto Query Language) training via KC7's modules. KQL is the query language for Microsoft Sentinel and Defender XDR, directly applicable to enterprise SOC environments.
 
-Completed foundational queries including table filtering, `where` clauses, and column projection. Encountered repeated network errors on the platform mid-session — diagnosed as KC7 platform instability, not syntax errors. Queries confirmed correct; errors resolved on retry.
+Completed foundational queries including table filtering, `where` clauses, and column projection. Encountered repeated network errors on the platform mid-session, diagnosed as KC7 platform instability, not syntax errors. Queries confirmed correct; errors resolved on retry.
 
 **Why this matters:** Sentinel is the dominant cloud SIEM in enterprise and MSSP environments. KQL proficiency is a differentiator for Tier 1 candidates.
 
@@ -50,13 +54,13 @@ Conducted focused research on Microsoft's cloud security stack ahead of an indus
 - Unified incident view correlates related alerts across all pillars into one investigation queue
 - Tier 1 analysts triage unified incidents rather than individual raw alerts
 
-**Takeaway:** Sentinel + Defender XDR is a full SOC stack. Understanding how they layer together — detection in Defender, investigation and response in Sentinel — is essential context for any MSSP-facing role.
+**Takeaway:** Sentinel + Defender XDR is a full SOC stack. Understanding how they layer together, detection in Defender, investigation and response in Sentinel, is essential context for any MSSP-facing role.
 
 ---
 
 ## Industry Networking
 
-Had an exploratory call with a SOC Manager at a local MSSP, arranged through a referral contact. MSSP analysts monitor environments for multiple clients simultaneously — real Tier 1 SOC work at scale.
+Had an exploratory call with a SOC Manager at a local MSSP, arranged through a referral contact. MSSP analysts monitor environments for multiple clients simultaneously, real Tier 1 SOC work at scale.
 
 Prepared with research on Sentinel, Defender XDR, and the SOC/DFIR overlap common in MSSP environments. Came with specific questions rather than general ones.
 
@@ -76,8 +80,17 @@ Profile: [JacobVranyesFast](https://tryhackme.com/p/JacobVranyesFast)
 
 | Item | Status |
 |------|--------|
-| Network+ exam | Scheduled — ~2 weeks out |
+| Network+ exam | Scheduled, ~2 weeks out |
 | Practice exam target | 75%+ (in progress) |
-| KQL / KC7 | Started — continuing |
+| KQL / KC7 | Started, continuing |
 | Sentinel/XDR familiarity | Research complete, lab TBD |
-| Industry follow-up | In progress |
+| Industry follow-up | In progress |
+
+---
+
+## What I Learned Today
+- Sentinel and Defender XDR aren't separate products doing the same job: Defender detects at the endpoint/identity/email level, Sentinel correlates and investigates across all of it
+- KQL fundamentals (where, filtering, projection) transfer directly between KC7's training environment and real Sentinel queries
+- A single conversation with a working SOC manager surfaced things no course covered: how much SOC and DFIR responsibilities overlap at Tier 2 in an MSSP
+
+**Big Picture:** Studying for Network+ and learning Sentinel/KQL in the same week reinforced how much of SOC work sits on top of fundamental networking knowledge. The tooling only makes sense once the underlying traffic and protocols do.
